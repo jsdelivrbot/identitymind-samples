@@ -34,7 +34,7 @@ After creating environment variables, you need to create a text file named `idmp
 #### Running the app
 To run the application locally ([http://localhost:8080](http://localhost:8080)), you can do it by executing:
 ```
-$ node index
+$ npm start
 ```
 
 
