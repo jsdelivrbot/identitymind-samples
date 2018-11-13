@@ -8,7 +8,7 @@ var request = require('request').defaults({strictSSL: false});
 
 var ednaConfig = {};
 
-ednaConfig.host =  "https://sandbox.identitymind.com";
+ednaConfig.host =  "https://edna.identitymind.com";
 ednaConfig.apiName = "apiNameHere";
 ednaConfig.apiKey = "apiKeyHere";
 

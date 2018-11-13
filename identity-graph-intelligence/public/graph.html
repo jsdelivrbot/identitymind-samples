@@ -464,14 +464,22 @@
               '    <table>' +
               '      <tr><th>First Seen</th> <td>{{firstSeenStr}}</td></tr>' +
               '      <tr><th>Recent Seen</th> <td>{{mostRecentlySeenStr}}</td></tr>' +
+              '      <tr><th>Reputation</th> <td>{{reputation}}</td></tr>' +
+              '      <tr><th>Proofers</th> <td>{{proofersStr}}</td></tr>' +
+              '      <tr><th>#Tx</th> <td>{{useData.t}}</td></tr>' +
+              '      <tr><th>#KYC</th> <td>{{useData.k}}</td></tr>' +
+              '      <tr><th>#Fraud</th> <td>{{useData.f}}</td></tr>' +
+              '      <tr><th>#MAccept</th> <td>{{useData.a}}</td></tr>' +
+              '      <tr><th>#MReject</th> <td>{{useData.r}}</td></tr>' +
               '    </table>' +
               '  </div>',
               renderer: function(edge, template) {
                   // The function context is s.graph
                   edge.degree = this.degree(edge.id);
                   // Returns an HTML string:
-                  edge.firstSeenStr = new Date(edge.firstSeen).toISOString();
-                  edge.mostRecentlySeenStr = new Date(edge.mostRecentlySeen).toISOString();
+                  edge.firstSeenStr = new Date(edge.firstSeen).toDateString();
+                  edge.mostRecentlySeenStr = new Date(edge.mostRecentlySeen).toDateString();
+                  edge.proofersStr = edge.externalProofers.join();
                 return Mustache.render(template, edge);
                 // Returns a DOM Element:
                 //var el = document.createElement('div');
